@@ -7,13 +7,13 @@ phases:
     commands:
 
 #Static Application Security Scan (SAST scan) using SonarCloud
-     - mvn verify sonar:sonar -Dsonar.projectKey=javaprojectaws -Dsonar.organization=javaprojectaws -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$TOKEN 
+     - mvn verify sonar:sonar -Dsonar.projectKey=devsecopssaini1 -Dsonar.organization=devsecops -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$TOKEN 
 
 #Quality Gates for Static Application Security Scan(SAST) using SonarCloud
 
      - sleep 5
      - |- 
-        quality_status=$(curl -s -u $TOKEN: https://sonarcloud.io/api/qualitygates/project_status?projectKey=javaprojectaws | jq -r '.projectStatus.status')
+        quality_status=$(curl -s -u $TOKEN: https://sonarcloud.io/api/qualitygates/project_status?projectKey=devsecopssaini1 | jq -r '.projectStatus.status')
         echo "SonarCloud analysistatus is $quality_status"; 
 #        if [ $quality_status = "ERROR" ] ; then exit 1;fi
 
